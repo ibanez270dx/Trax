@@ -10,6 +10,9 @@ gem 'rails', '4.0.0.beta1'
 # Use MySQL
 gem 'mysql2'
 
+# jQuery
+gem 'jquery-rails'
+
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
@@ -18,12 +21,29 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
-########################################
-# Other
-########################################
+group :production do
+  # App server
+  gem 'unicorn'
+end
 
-# jQuery
-gem 'jquery-rails'
+group :development do
+  # Use debugger
+  gem 'debugger'
+
+  # Pry
+  gem 'pry-rails'
+  gem 'pry-plus'
+
+  # App Server
+  gem 'thin'
+
+  # Quiet Assets
+  gem 'quiet_assets'
+end
+
+########################################
+# Convenience
+########################################
 
 # Embed the V8 JavaScript interpreter into Ruby.
 gem 'therubyracer', platforms: :ruby
