@@ -1,5 +1,23 @@
 class UserController < ApplicationController
 
+  def signup
+    @user = User.new
+
+    if request.post?
+      @user = User.create user_params
+
+      if @user.valid?
+        session[:user_id] = @user.id
+        flash[:success] = "Welcome to Trax"
+        redirect_to dashboard_path
+      end
+    end
+  end
+
+  ###############################
+  # Authentication
+  ###############################
+
   def login
     if request.post?
       if @user = User.find_by_login(params[:user][:login])
@@ -18,7 +36,14 @@ class UserController < ApplicationController
 
   def logout
     session[:user_id] = nil
+    flash[:success] = "You have been logged out."
     redirect_to user_login_path
   end
+
+  private
+
+    def user_params
+      params.require(:user).permit(:name, :login, :password, :password_confirmation, :soundcloud_id)
+    end
 
 end

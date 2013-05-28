@@ -3,6 +3,7 @@
   <head>
     <title><%= @title || "Trax" %></title>
     <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+    <script src="//connect.soundcloud.com/sdk.js"></script>
     <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
     <%= csrf_meta_tags %>
     <%= yield :head %>
@@ -28,11 +29,20 @@
               </li>
             </ul>
           </div>
+          <% if logged_in? %>
+            <div class="nav-collapse collapse pull-right">
+              <ul class="nav">
+                <li><%= link_to 'Logout', user_logout_path %></li>
+              </ul>
+            </div>
+          <% end %>
         </div>
       </div>
     </div>
 
     <div class="container content-section">
+      <%= render 'layouts/flash_messages' %>
+
       <%= yield %>
     </div>
 
