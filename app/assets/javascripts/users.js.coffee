@@ -3,8 +3,8 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
 $(document).on 'page:load', ->
-
   $('#soundcloud-connect .btn').on 'click', ->
+    console.log "click"
     SC.connect ->
       SC.get "/me", (me) ->
         $('#user_soundcloud_id').val(me.id)
