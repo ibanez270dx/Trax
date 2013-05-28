@@ -1,3 +1,38 @@
 // Place all the styles related to the dashboard controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.clickable {
+  width:100%;
+  height:100%;
+  cursor:pointer;
+}
+
+#recorderFlashContainer {
+  z-index:1050;
+}
+
+#addTrack {
+  .modal-body {
+    .row-fluid div { text-align:center; padding:0px; margin:0px; }
+    a   { color:#000000; &:hover { color:#000000; text-decoration:none; } }
+    h3  { margin-top:0px; padding-top:0px; }
+    .or { padding-top:75px !important; font-size:30px; }
+
+    div#select-type    { display:block; }
+    div#record-actions { display:none; }
+    div#upload-slide { display:none; }
+
+    #record-actions {
+      text-align:center;
+      span {
+        margin-left:10px;
+        margin-right:10px;
+        &.icon-circle { &:hover { color:#ea0404; } }
+        &.icon-play { color:#cccccc; }
+        &.icon-stop { display:none; &:hover { color:#ea0404; } }
+        &.icon-pause { display:none; }
+      }
+    }
+  }
+}

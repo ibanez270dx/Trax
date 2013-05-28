@@ -1,2 +1,59 @@
+
+
 <h1>Dashboard</h1>
-blah blah blah
+<%= link_to ' Add Track', '#addTrack', id: 'add-track', class: 'icon-plus-sign btn', data: { toggle: "modal" } %>
+
+<br />
+&nbsp;
+
+<div class="row-fluid">
+  <div class="span4">
+    <h3>My Tracks</h3>
+  </div>
+  <div class="span4">
+    <h3>My Projects</h3>
+  </div>
+  <div class="span4">
+    <h3>My Songs</h3>
+  </div>
+</div>
+
+<!-- Modal -->
+<div id="addTrack" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h3 id="myModalLabel" class="icon-plus-sign"> Add Track</h3>
+  </div>
+  <div class="modal-body">
+
+    <!-- Select Record or Upload -->
+    <div id="select-type">
+      <div class="row-fluid">
+        <div id="select-record" class="span5 clickable">
+          <span class="icon-microphone icon-12x"></span>
+          <h3>Record</h3>
+        </div>
+        <div class="span2 or">
+          <span>or</span>
+        </div>
+        <div id="select-upload" class="span5 clickable">
+          <span class="icon-upload icon-12x"></span>
+          <h3>Upload</h3>
+        </div>
+      </div>
+    </div>
+
+    <!-- Record -->
+    <div id="record-actions">
+      <span id="record" class="icon-circle icon-6x clickable"></span>
+      <span id="stop" class="icon-stop icon-6x clickable"></span>
+      <span id="play" class="icon-play icon-6x clickable"></span>
+      <span id="pause" class="icon-pause icon-6x clickable"></span>
+      <div id="status"></div>
+    </div>
+
+  </div>
+  <div class="modal-footer">
+    <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+  </div>
+</div>
