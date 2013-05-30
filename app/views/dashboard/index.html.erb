@@ -45,15 +45,24 @@
 
     <!-- Record -->
     <div id="record-actions">
-      <span id="record" class="icon-circle icon-6x clickable"></span>
-      <span id="stop" class="icon-stop icon-6x clickable"></span>
-      <span id="play" class="icon-play icon-6x clickable"></span>
-      <span id="pause" class="icon-pause icon-6x clickable"></span>
+      <span id="record" class="icon-circle icon-12x clickable"></span>
+      <span id="stop" class="icon-stop icon-12x clickable"></span>
+      <span id="play" class="icon-play icon-12x clickable disabled"></span>
+      <span id="pause" class="icon-pause icon-12x clickable"></span>
       <div id="status"></div>
+    </div>
+
+    <!-- Details -->
+    <div id="track-details">
+      <h3>Track Details</h3>
+      <%= form_for Track.new do |f| %>
+      <% end %>
     </div>
 
   </div>
   <div class="modal-footer">
-    <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+    <button id="modal-close" class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+    <button id="to-details" class="btn btn-success">Alright, sounds good</button>
+    <button id="to-upload" class="btn btn-primary">Save and Upload</button>
   </div>
 </div>

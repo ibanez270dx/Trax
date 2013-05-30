@@ -8,4 +8,6 @@ Trax::Application.routes.draw do
 
   get 'dashboard' => 'dashboard#index', as: :dashboard
 
+  resources :tracks
+
 end

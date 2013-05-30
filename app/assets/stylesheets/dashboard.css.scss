@@ -13,15 +13,20 @@
 }
 
 #addTrack {
+
+  // Modal Body
   .modal-body {
+    max-height:200px; overflow:hidden;
+
     .row-fluid div { text-align:center; padding:0px; margin:0px; }
     a   { color:#000000; &:hover { color:#000000; text-decoration:none; } }
     h3  { margin-top:0px; padding-top:0px; }
     .or { padding-top:75px !important; font-size:30px; }
 
-    div#select-type    { display:block; }
-    div#record-actions { display:none; }
-    div#upload-slide { display:none; }
+    div#select-type    { position:relative; }
+    div#record-actions { position:relative; }
+    div#track-details  { position:relative; }
+    div#upload-slide { display:none; position:relative;  }
 
     #record-actions {
       text-align:center;
@@ -29,10 +34,22 @@
         margin-left:10px;
         margin-right:10px;
         &.icon-circle { &:hover { color:#ea0404; } }
-        &.icon-play { color:#cccccc; }
+        &.icon-play { &:hover { color:green; } }
         &.icon-stop { display:none; &:hover { color:#ea0404; } }
         &.icon-pause { display:none; }
+        &.disabled { color:#cccccc !important; }
       }
     }
+
+    #track-details {
+      top:-400px;
+      left:600px;
+    }
+  }
+
+  // Modal Footer
+  .modal-footer {
+    #to-details { display:none; }
+    #to-upload  { display:none; }
   }
 }
