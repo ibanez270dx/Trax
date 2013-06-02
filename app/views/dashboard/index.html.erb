@@ -2,26 +2,13 @@
 
 <h1>Dashboard</h1>
 
-<div class="dashboard row-fluid">
+<div id="dashboard" class="row-fluid">
   <div class="span4">
     <%= link_to ' Create Track', '#createTrack', id: 'create-track', class: 'icon-plus-sign btn', data: { toggle: "modal" } %>
     <h3>My Tracks</h3>
-    <table class="table table-hover table-striped table-bordered">
-      <thead>
-        <tr>
-          <th>Title</th>
-          <th>Duration</th>
-        </tr>
-      </thead>
-      <tbody>
-        <% @tracks.each do |track| %>
-          <tr>
-            <td><%= track.title %></td>
-            <td><%= track.duration %></td>
-          </tr>
-        <% end %>
-      </tbody>
-    </table>
+    <div class="track-list">
+      <%= render partial: 'dashboard/tracks', formats: [:html], locals: { tracks: @tracks } %>
+    </div>
   </div>
 
   <div class="span4">

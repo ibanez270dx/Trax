@@ -88,6 +88,7 @@ $(document).on 'ready page:load', ->
       form = $(this)
       console.log "HITTING: ", data
       if data['saved']
+        $('#dashboard .track-list').html(data['html'])
         $('#upload-to-soundcloud .ajax-loader').hide()
         $('#upload-to-soundcloud .status').text('Success!').delay(3000).queue ->
           $('#createTrack').modal('toggle')
