@@ -12,7 +12,15 @@
   z-index:1050;
 }
 
-#addTrack {
+div.dashboard {
+  padding-top:30px;
+
+  table {
+    width:90%;
+  }
+}
+
+#createTrack {
 
   // Modal Body
   .modal-body {
@@ -42,9 +50,16 @@
     }
 
     #track-details {
-      top:-400px;
-      left:600px;
+      top:-415px; left:600px;
+      label { text-align:left; text-indent:17px; }
+      textarea#track_description { height:90px; }
     }
+
+    #upload-to-soundcloud { display:none; position:absolute; z-index:1081;
+      top:0px; text-align:center; font-size:17px; font-weight:bold; width:530px;
+      height:100%; padding-top:20px; }
+    #upload-to-soundcloud-mask { display:none; position:absolute; z-index:1080; width:530px; height:100%;
+      background-color:#ffffff; opacity:0.7; top:0px; }
   }
 
   // Modal Footer

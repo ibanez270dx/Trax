@@ -1,6 +1,7 @@
 console.log "what?"
 
 $(document).on 'ready page:load', ->
+  # $('#track-details .upload, #track-details .upload-mask').hide()
   console.log "hello"
 
   # Initialize SoundCloud
@@ -10,10 +11,12 @@ $(document).on 'ready page:load', ->
 
   # On Bootstrap's modal "shown" event
   # http://twitter.github.io/bootstrap/javascript.html#modals
-  $('#addTrack').on 'shown', ->
+  $('#createTrack').on 'shown', ->
 
     # Select Record
     $(document).on 'click', '#select-record', ->
+      $('#modal-label').fadeOut 'fast', ->
+        $('#modal-label').text(' Record Track').removeClass().addClass('icon-microphone').fadeIn('fast')
       $('#select-type').animate
         top: '-250', 300, ->
           $('#record-actions').animate
@@ -64,8 +67,10 @@ $(document).on 'ready page:load', ->
           finished: ->
             setState('stop')
 
+    # Alright, sounds good.
     $('#to-details').on 'click', (event) ->
       event.preventDefault()
+      $('#modal-label').text(' Track Details').removeClass().addClass('icon-edit').fadeIn('fast')
       $('#record-actions').animate
         left: '-600', 600, 'easeInBack', ->
           $('#track-details').animate
@@ -74,8 +79,41 @@ $(document).on 'ready page:load', ->
           $('.modal-footer button').fadeOut 'fast', ->
             $('.modal-footer #modal-close, .modal-footer #to-upload').fadeIn('fast')
 
+    # Save and Upload
+    $('#to-upload').on 'click', (event) ->
+      event.preventDefault()
+      $('form#new_track').submit()
 
-
+    $(document).on 'ajax:success', 'form#new_track', (event, data, status, xhr) ->
+      form = $(this)
+      console.log "HITTING: ", data
+      if data['saved']
+        $('#upload-to-soundcloud .ajax-loader').hide()
+        $('#upload-to-soundcloud .status').text('Success!').delay(3000).queue ->
+          $('#createTrack').modal('toggle')
+      if data['valid']
+        $('.modal-footer button').fadeOut('fast')
+        console.log "valid"
+        $('#upload-to-soundcloud-mask').fadeTo 'fast', '0.75', ->
+          $('#upload-to-soundcloud').fadeIn 'fast', ->
+            console.log "animation complete"
+            SC.connect connected: ->
+              console.log "connected..."
+              SC.recordUpload
+                track:
+                  title: $('input#track_title').val()
+                  description: $('textarea#track_description').html()
+                  sharing: 'public'
+              , (track) ->
+                console.log "Now ajax save to the database..."
+                console.log "Track: ", track
+                form.find('#track_duration').val(track.duration)
+                form.find('#track_soundcloud_id').val(track.id)
+                form.find('#track_soundcloud_uri').val(track.uri)
+                form.find('#track_soundcloud_permalink_url').val(track.permalink_url)
+                form.submit()
+      else
+        $('div#track-details').html(data['html'])
 
 
 
@@ -85,12 +123,4 @@ $(document).on 'ready page:load', ->
     $(document).on 'click', '#upload', ->
       console.log "clicked upload"
       setState('upload')
-      SC.connect connected: ->
-        console.log "connected..."
-        SC.recordUpload
-          track:
-            title: 'testing uploadz'
-            sharing: 'public'
-        , (track) ->
-          console.log "Track: ", track
 

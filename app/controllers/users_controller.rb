@@ -1,4 +1,4 @@
-class UserController < ApplicationController
+class UsersController < ApplicationController
 
   def signup
     @user = User.new
@@ -19,7 +19,9 @@ class UserController < ApplicationController
   ###############################
 
   def login
-    if request.post?
+    if request.get? && current_user
+      redirect_to dashboard_path and return
+    elsif request.post?
       if @user = User.find_by_login(params[:user][:login])
         if @user.authenticate(params[:user][:password])
           session[:user_id] = @user.id

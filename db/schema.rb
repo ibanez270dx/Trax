@@ -16,6 +16,13 @@ ActiveRecord::Schema.define(version: 20130530031806) do
   create_table "tracks", force: true do |t|
     t.integer  "user_id"
     t.string   "title"
+    t.text     "description"
+    t.string   "instrument"
+    t.string   "time_signature"
+    t.integer  "duration"
+    t.integer  "soundcloud_id"
+    t.string   "soundcloud_uri"
+    t.string   "soundcloud_permalink_url"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

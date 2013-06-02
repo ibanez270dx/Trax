@@ -1,0 +1,21 @@
+<%= form_for (@track || Track.new), remote: true do |f| %>
+  <div class="row-fluid">
+    <div class="span6">
+      <%= f.label :title %>
+      <%= f.text_field :title %>
+
+      <%= f.label :description %>
+      <%= f.text_area :description %>
+    </div>
+    <div class="span6">
+      <%= f.label :instrument %>
+      <%= f.select :instrument, Track::INSTRUMENTS %>
+      <%= f.label :time_signature %>
+      <%= f.text_field :time_signature %>
+    </div>
+  </div>
+  <%= f.hidden_field :duration %>
+  <%= f.hidden_field :soundcloud_id %>
+  <%= f.hidden_field :soundcloud_uri %>
+  <%= f.hidden_field :soundcloud_permalink_url %>
+<% end %>

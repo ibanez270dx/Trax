@@ -1,28 +1,45 @@
 
 
 <h1>Dashboard</h1>
-<%= link_to ' Add Track', '#addTrack', id: 'add-track', class: 'icon-plus-sign btn', data: { toggle: "modal" } %>
 
-<br />
-&nbsp;
-
-<div class="row-fluid">
+<div class="dashboard row-fluid">
   <div class="span4">
+    <%= link_to ' Create Track', '#createTrack', id: 'create-track', class: 'icon-plus-sign btn', data: { toggle: "modal" } %>
     <h3>My Tracks</h3>
+    <table class="table table-hover table-striped table-bordered">
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Duration</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @tracks.each do |track| %>
+          <tr>
+            <td><%= track.title %></td>
+            <td><%= track.duration %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
   </div>
+
   <div class="span4">
+    <%= link_to ' Create Project', '#createProject', id: 'create-project', class: 'icon-plus-sign btn', data: { toggle: "modal" } %>
     <h3>My Projects</h3>
   </div>
+
   <div class="span4">
+    <%= link_to ' Create Song', '#createSong', id: 'create-song', class: 'icon-plus-sign btn', data: { toggle: "modal" } %>
     <h3>My Songs</h3>
   </div>
 </div>
 
 <!-- Modal -->
-<div id="addTrack" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div id="createTrack" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-header">
     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-    <h3 id="myModalLabel" class="icon-plus-sign"> Add Track</h3>
+    <h3 id="modal-label" class="icon-plus-sign"> Add Track</h3>
   </div>
   <div class="modal-body">
 
@@ -54,10 +71,17 @@
 
     <!-- Details -->
     <div id="track-details">
-      <h3>Track Details</h3>
-      <%= form_for Track.new do |f| %>
-      <% end %>
+      <%= render partial: 'track/add/details', formats: [ :html ] %>
     </div>
+
+    <!-- Uploading to SoundCloud -->
+    <div id="upload-to-soundcloud">
+      <div class="icon-cloud-upload icon-8x"></div>
+      <div class="status">Uploading to SoundCloud</div>
+      <div class="ajax-loader"><%= image_tag 'ajax-loader.gif' %></div>
+    </div>
+    <div id="upload-to-soundcloud-mask"></div>
+
 
   </div>
   <div class="modal-footer">
