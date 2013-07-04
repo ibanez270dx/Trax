@@ -47,6 +47,12 @@
         &.icon-pause { display:none; }
         &.disabled { color:#cccccc !important; }
       }
+
+      canvas {
+        width:530px;
+        height:100px;
+        border:1px solid #00ff00;
+      }
     }
 
     #track-details {
