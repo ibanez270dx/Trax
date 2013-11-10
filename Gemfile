@@ -5,7 +5,7 @@ source 'https://rubygems.org'
 ########################################
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.0.0'
+gem 'rails'
 
 # Use MySQL
 gem 'mysql2'
@@ -16,9 +16,9 @@ gem 'jquery-rails'
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
-  gem 'sass-rails',   '~> 4.0.0'
-  gem 'coffee-rails', '~> 4.0.0'
-  gem 'uglifier', '>= 1.0.3'
+  gem 'sass-rails'
+  gem 'coffee-rails'
+  gem 'uglifier'
 end
 
 group :production do
@@ -30,9 +30,9 @@ group :development do
   # Use debugger
   gem 'debugger'
 
-  # Pry
-  gem 'pry-rails'
-  gem 'pry-plus'
+  # Better Errors
+  gem 'better_errors'
+  gem 'binding_of_caller'
 
   # App Server
   gem 'thin'
@@ -58,5 +58,5 @@ gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootst
 # gem 'turbolinks'
 
 # To use ActiveModel has_secure_password
-gem 'bcrypt-ruby', '~> 3.0.0'
+gem 'bcrypt-ruby'
 
