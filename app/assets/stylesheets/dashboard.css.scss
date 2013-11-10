@@ -38,7 +38,7 @@
 
     #record-actions {
       text-align:center;
-      span {
+      .clickable {
         margin-left:10px;
         margin-right:10px;
         &.icon-circle { &:hover { color:#ea0404; } }
@@ -46,12 +46,6 @@
         &.icon-stop { display:none; &:hover { color:#ea0404; } }
         &.icon-pause { display:none; }
         &.disabled { color:#cccccc !important; }
-      }
-
-      canvas {
-        width:530px;
-        height:100px;
-        border:1px solid #00ff00;
       }
     }
 
@@ -72,5 +66,139 @@
   .modal-footer {
     #to-details { display:none; }
     #to-upload  { display:none; }
+  }
+}
+
+//////////////////////////////////////////////////////////
+// Slider Button
+//////////////////////////////////////////////////////////
+
+.slider {
+  width: 80px;
+
+  label {
+    color: #000;
+    display: block;
+    vertical-align: top;
+    padding-top: 5px;
+    font-size: 11px;
+    text-align: left;
+  }
+  .btn-slider {
+    display: inline-block;
+    width: 80px;
+    overflow: hidden;
+    border-radius: 4px;
+    text-align: left;
+
+    ul {
+      width: 120px;
+      height: 30px;
+      background: #0088cc;
+      margin: 0;
+      position: relative;
+      box-shadow: inset 0 0 6px rgba(0,0,0,0.6);
+
+      li {
+        display: inline-block;
+        position: absolute;
+        width: 37px;
+        height: 28px;
+        vertical-align: top;
+        text-align: center;
+        color: #fff;
+        padding-top: 4px;
+        text-shadow: 0px 2px 2px #169ee2;
+        font-weight: bold;
+        &.active {
+          background: #ffffff;
+        }
+        &:first-child {
+          top: 0px;
+          left: 0px;
+          padding-left: 2px;
+        }
+        &.btn {
+          top: 0px;
+          left: 40px;
+          width: 14px;
+          height: 20px;
+        }
+        &:last-child {
+          top: 0px;
+          right: 0px;
+          padding-right: 2px;
+        }
+      }
+    }
+  }
+}
+
+.clipping {
+  width: 80px;
+  height: 90px;
+  position: relative;
+
+  label {
+    color: #000;
+    display: block;
+    vertical-align: top;
+    padding-top: 5px;
+    font-size: 11px;
+    text-align: left;
+  }
+
+  .meter {
+    position: absolute;
+    width: 80px;
+    height: 60px;
+    background: #2f2f2f;
+    border-radius: 4px;
+    z-index: 30;
+  }
+
+  .bar {
+    position: absolute;
+    width: 80px;
+    height: 60px;
+    z-index: 40;
+    background: #df2518; /* Old browsers */
+    background: -moz-linear-gradient(top,  #df2518 0%, #f1e532 30%, #45d526 60%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#df2518), color-stop(30%,#f1e532), color-stop(60%,#45d526)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #df2518 0%,#f1e532 30%,#45d526 60%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #df2518 0%,#f1e532 30%,#45d526 60%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #df2518 0%,#f1e532 30%,#45d526 60%); /* IE10+ */
+    background: linear-gradient(to bottom,  #df2518 0%,#f1e532 30%,#45d526 60%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#df2518', endColorstr='#45d526',GradientType=0 ); /* IE6-9 */
+    border-radius: 4px;
+  }
+
+  #clipping {
+    position: absolute;
+    z-index: 50;
+    width: 80px;
+    height: 60px;
+    border-radius: 4px;
+    left: 0;
+  }
+}
+
+.input {
+  width: 80px;
+
+  label {
+    color: #000;
+    display: block;
+    vertical-align: top;
+    padding-top: 5px;
+    font-size: 11px;
+    text-align: left;
+  }
+
+  #input {
+    width: 80px;
+    height: 60px;
+    background: #2f2f2f;
+    border-radius: 4px;
   }
 }

@@ -25,7 +25,28 @@
     </div>
 
     <!-- Record -->
-    <div id="record-actions">
+    <div id="record-actions" data-quick-recorder>
+      <div class="slider">
+        <label>microphone:</label>
+        <div class="btn-slider">
+          <ul>
+            <li class="slider-active">on</li>
+            <li class="btn mic-switch">&nbsp;</li>
+            <li>off</li>
+          </ul>
+        </div>
+      </div>
+      <div class="clipping">
+        <label>clipping: <span></span></label>
+        <div class="meter"></div>
+        <div class="bar"></div>
+        <canvas id="clipping" width="80" height="30"></canvas>
+      </div>
+      <div class="input">
+        <label>input:</label>
+        <canvas id="input" width="80" height="30"></canvas>
+      </div>
+
       <span id="record" class="icon-circle icon-12x clickable"></span>
       <span id="stop" class="icon-stop icon-12x clickable"></span>
       <span id="play" class="icon-play icon-12x clickable disabled"></span>
