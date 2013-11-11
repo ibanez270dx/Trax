@@ -123,7 +123,8 @@ $(document).on 'ready', ->
             $('#record-actions').animate
               top: '-210', ->
                 $('.modal-body').animate
-                  maxHeight: '300'
+                  maxHeight: '265'
+                  paddingTop: '2'
 
       ########################################
       # Recording Interface

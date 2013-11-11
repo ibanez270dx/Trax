@@ -37,14 +37,44 @@
     div#upload-slide { display:none; position:relative;  }
 
     #record-actions {
+      position: relative;
+
+      .actions {
+        padding-right: 30px;
+        padding-top: 35px;
+
+        .disabled-audio-controls {
+          position:absolute;
+          z-index: 50;
+          width: 340px;
+          height: 50px;
+          background: rgba(255,255,255,0.75);
+        }
+        audio {
+          padding-top: 9px;
+        }
+      }
+
+      .recording-light {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 20px;
+        height: 20px;
+        border-radius: 15px;
+        background: #000000;
+        border: 3px solid #888888;
+        &.active {
+          background: red;
+        }
+      }
+
       text-align:center;
       .clickable {
         margin-left:10px;
         margin-right:10px;
         &.icon-circle { &:hover { color:#ea0404; } }
-        &.icon-play { &:hover { color:green; } }
-        &.icon-stop { display:none; &:hover { color:#ea0404; } }
-        &.icon-pause { display:none; }
+        &.icon-stop { &:hover { color:#ea0404; } }
         &.disabled { color:#cccccc !important; }
       }
     }

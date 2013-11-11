@@ -26,33 +26,40 @@
 
     <!-- Record -->
     <div id="record-actions" data-quick-recorder>
-      <div class="slider">
-        <label>microphone:</label>
-        <div class="btn-slider">
-          <ul>
-            <li class="slider-active">on</li>
-            <li class="btn mic-switch">&nbsp;</li>
-            <li>off</li>
-          </ul>
+      <div class="span3 info-bar">
+        <div class="slider">
+          <label>microphone:</label>
+          <div class="btn-slider">
+            <ul>
+              <li class="slider-active">on</li>
+              <li class="btn mic-switch">&nbsp;</li>
+              <li>off</li>
+            </ul>
+          </div>
+        </div>
+        <div class="clipping">
+          <label>clipping: <span></span></label>
+          <div class="meter"></div>
+          <div class="bar"></div>
+          <canvas id="clipping" width="80" height="30"></canvas>
+        </div>
+        <div class="input">
+          <label>input:</label>
+          <canvas id="input" width="80" height="30"></canvas>
         </div>
       </div>
-      <div class="clipping">
-        <label>clipping: <span></span></label>
-        <div class="meter"></div>
-        <div class="bar"></div>
-        <canvas id="clipping" width="80" height="30"></canvas>
+      <div class="span9 actions">
+        <div class="recording-light"></div>
+        <span id="record" class="icon-circle icon-12x clickable"></span>
+        <span id="stop" class="icon-stop icon-12x clickable disabled"></span>
+        <div id="status"></div>
+        <div class="disabled-audio-controls"></div>
+        <audio controls>
+          <source src="horse.ogg" type="audio/ogg">
+          <source src="horse.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+        </audio>
       </div>
-      <div class="input">
-        <label>input:</label>
-        <canvas id="input" width="80" height="30"></canvas>
-      </div>
-
-      <span id="record" class="icon-circle icon-12x clickable"></span>
-      <span id="stop" class="icon-stop icon-12x clickable"></span>
-      <span id="play" class="icon-play icon-12x clickable disabled"></span>
-      <span id="pause" class="icon-pause icon-12x clickable"></span>
-      <div id="status"></div>
-      <canvas id="wave" width="530" height="100" style="display:block; background-color:#ffffff ;"></canvas>
     </div>
 
     <!-- Details -->
