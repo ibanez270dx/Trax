@@ -1,0 +1,19 @@
+////////////////////////////////////////////////
+// Utility
+////////////////////////////////////////////////
+
+.flash.alert {
+  width:500px;
+  margin-left:-250px;
+  left:50%;
+  position:absolute;
+  text-align:center;
+}
+
+.alert-error h4 {
+  margin-bottom:10px;
+}
+
+.field_with_errors input, .field_with_errors textarea {
+  border:1px solid #b94a48 !important;
+}

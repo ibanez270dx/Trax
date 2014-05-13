@@ -11,3 +11,5 @@
 /log/*.log
 /tmp
 
+# Stupid thing
+/.DS_store
