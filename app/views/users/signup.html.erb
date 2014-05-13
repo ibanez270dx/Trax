@@ -19,17 +19,6 @@
     <div class="controls"><%= f.password_field :password_confirmation %></div>
   </div>
   <div class="control-group">
-    <%= f.label :soundcloud_id, 'SoundCloud', class: 'control-label' %>
-    <div id="soundcloud-connect" class="controls">
-      <% if @user.soundcloud? %>
-        <span class="text-success">Connected</span>
-      <% else %>
-        <%= link_to 'Connect', '#', class: 'btn btn-primary' %>
-      <% end %>
-      <%= f.hidden_field :soundcloud_id %>
-    </div>
-  </div>
-  <div class="control-group">
     <%= f.submit 'Create Account', class: 'btn' %>
   </div>
 <% end %>

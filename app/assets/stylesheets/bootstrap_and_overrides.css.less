@@ -15,21 +15,13 @@
 // Font Awesome
 @import "fontawesome/font-awesome";
 
-// Glyphicons
-//@import "twitter/bootstrap/sprites.less";
-
-// Your custom LESS stylesheets goes here
-//
-// Since bootstrap was imported above you have access to its mixins which
-// you may use and inherit here
-//
-// If you'd like to override bootstrap's own variables, you can do so here as well
-// See http://twitter.github.com/bootstrap/customize.html#variables for their names and documentation
-//
-// Example:
-// @linkColor: #ff0000;
-
+// Override Icon Sizes
 .icon-6x { font-size:6em; }
 .icon-8x { font-size:8em; }
 .icon-12x { font-size:12em; }
 .icon-15x { font-size:15em; }
+
+// Account for fixed header
+html.application {
+  body { padding-top:60px; }
+}

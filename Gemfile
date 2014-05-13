@@ -28,7 +28,7 @@ end
 
 group :development do
   # Use debugger
-  gem 'debugger'
+  # gem 'debugger'
 
   # Better Errors
   gem 'better_errors'
@@ -59,4 +59,3 @@ gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootst
 
 # To use ActiveModel has_secure_password
 gem 'bcrypt-ruby'
-

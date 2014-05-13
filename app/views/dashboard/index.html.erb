@@ -4,11 +4,8 @@
 
 <div id="dashboard" class="row-fluid">
   <div class="span4">
-
-    <%= render partial: 'tracks/create', formats: [:html] %>
+    <%= link_to ' Create Track', '#createTrack', id: 'create-track', class: 'icon-plus-sign btn', data: { toggle: "modal" } %>
     <h3>My Tracks</h3>
-    <div class="track-list">
-    </div>
   </div>
 
   <div class="span4">
