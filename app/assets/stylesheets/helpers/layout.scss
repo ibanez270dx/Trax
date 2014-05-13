@@ -1,0 +1,18 @@
+
+// Override Icon Sizes
+.icon-6x { font-size:6em; }
+.icon-8x { font-size:8em; }
+.icon-12x { font-size:12em; }
+.icon-15x { font-size:15em; }
+
+// Account for fixed header
+body { padding-top:60px; }
+
+// Right justify icons
+.pull-right {
+  position: relative;
+  &:before {
+    position: absolute;
+    right: 0px;
+  }
+}

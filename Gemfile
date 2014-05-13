@@ -48,12 +48,6 @@ end
 # Embed the V8 JavaScript interpreter into Ruby.
 gem 'therubyracer', platforms: :ruby
 
-# Use Less stylesheet language
-gem "less-rails"
-
-# Twitter Bootstrap
-gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
-
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 # gem 'turbolinks'
 
