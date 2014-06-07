@@ -12,6 +12,31 @@ html.dashboard {
         display: block;
         font-size: 60px;
       }
+
+      table {
+        border-radius: 10px;
+        background: #252525;
+        color: #fff;
+
+        tr {
+          td {
+            border-top: 1px solid #333;
+            &.play {
+              padding-top: 11px;
+              i {
+                font-size: 16px;
+                color: #d6d6d6;
+              }
+            }
+            &.title { text-align: left; }
+            &.duration { text-align: right; }
+            &.last-modified { text-align: right; }
+          }
+          &:first-child {
+            td { border: none; }
+          }
+        }
+      }
     }
   }
 }

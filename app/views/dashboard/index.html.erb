@@ -2,9 +2,19 @@
 
 <div id="dashboard" class="row">
   <section id="tracks" class="col-md-4">
-    <span class="jumbo-text">0</span>
+    <span class="jumbo-text"><%= current_user.tracks.count %></span>
     <i class="fa fa-sliders"></i>
     <h2>Tracks</h2>
+    <table class="table">
+      <% current_user.tracks.each do |track| %>
+        <tr>
+          <td class="play"><i class="fa fa-play"></i></td>
+          <td class="title"><%= track.title %></td>
+          <td class="duration"><%= Time.at(track.duration).gmtime.strftime('%R:%S') %></td>
+          <td class="last-modified"><%= track.updated_at.strftime('%m.%d.%Y %l:%M%p') %></td>
+        </tr>
+      <% end %>
+    </table>
   </section>
   <section id="projects" class="col-md-4">
     <span class="jumbo-text">0</span>
