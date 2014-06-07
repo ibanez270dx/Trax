@@ -13,4 +13,8 @@ module ApplicationHelper
     current_user.present?
   end
 
+  def active_if_current_page(name)
+    controller.action_name.gsub(/_/, '-').downcase==name.gsub(' ', '-').downcase ? 'class=\'active\'' : ''
+  end
+
 end

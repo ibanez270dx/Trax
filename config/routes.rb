@@ -9,6 +9,8 @@ Trax::Application.routes.draw do
   get 'dashboard' => 'dashboard#index', as: :dashboard
   get 'dashboard/update' => 'dashboard#update', as: :update_dashboard
 
+  get 'editor' => 'editor#index', as: :editor
+
   resources :tracks
 
 end

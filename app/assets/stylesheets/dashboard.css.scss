@@ -8,13 +8,17 @@ html.dashboard {
         font-weight: bold;
         font-size: 150px;
       }
-      i {
+      i.jumbo-text {
         display: block;
         font-size: 60px;
       }
 
+      a.btn {
+        i.fa { padding-right: 2px; }
+      }
       table {
         border-radius: 10px;
+        border: none;
         background: #252525;
         color: #fff;
 

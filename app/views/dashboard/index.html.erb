@@ -1,11 +1,13 @@
 
-
 <div id="dashboard" class="row">
+
   <section id="tracks" class="col-md-4">
-    <span class="jumbo-text"><%= current_user.tracks.count %></span>
-    <i class="fa fa-sliders"></i>
+    <span class="jumbo-text">
+      <%= current_user.tracks.count %>
+    </span>
+    <i class="jumbo-text fa fa-sliders"></i>
     <h2>Tracks</h2>
-    <table class="table">
+    <table class="table well">
       <% current_user.tracks.each do |track| %>
         <tr>
           <td class="play"><i class="fa fa-play"></i></td>
@@ -15,15 +17,19 @@
         </tr>
       <% end %>
     </table>
+    <%= link_to '<i class="fa fa-plus-circle"></i> Create Track'.html_safe, editor_path, class: 'btn btn-info' %>
   </section>
+
   <section id="projects" class="col-md-4">
     <span class="jumbo-text">0</span>
-    <i class="fa fa-file-audio-o"></i>
+    <i class="jumbo-text fa fa-file-audio-o"></i>
     <h2>Projects</h2>
   </section>
+
   <section id="songs" class="col-md-4">
     <span class="jumbo-text">0</span>
-    <i class="fa fa-music"></i>
+    <i class="jumbo-text fa fa-music"></i>
     <h2>Songs</h2>
   </section>
+
 </div>
