@@ -9,10 +9,34 @@
 body { padding-top:60px; }
 
 // Right justify icons
-.pull-right {
+.pull-icon-right {
   position: relative;
   &:before {
     position: absolute;
     right: 0px;
+  }
+}
+
+// Logo
+
+.navbar-brand {
+  position: relative;
+  padding-left: 37px;
+  font-family: 'Play', sans-serif;
+  font-weight: 700;
+  font-size: 30px;
+  color: #000 !important;
+  text-shadow: 2px 0px 2px #a0c6e2, -2px 0px 2px #a0c6e2,
+               0px 2px 3px #6e9cbe, 0px -2px 3px #6e9cbe,
+               0px 4px 4px #5e8bac, 0px -4px 4px #5e8bac,
+               0px 6px 6px #4f7fa3, 0px -6px 6px #4f7fa3,
+               0px 10px 8px #3b5b73, 0px -10px 8px #3b5b73
+               !important;
+
+  i {
+    position: absolute;
+    top: 10px;
+    left: 0px;
+    font-size: 34px;
   }
 }
