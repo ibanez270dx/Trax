@@ -1,4 +1,5 @@
-$(document).on 'page:load', ->
+
+$(document).on 'ready', ->
   jQuery ->
     $("a[rel=popover]").popover()
     $(".tooltip").tooltip()

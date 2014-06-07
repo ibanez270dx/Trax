@@ -35,7 +35,7 @@ group :development do
   gem 'binding_of_caller'
 
   # App Server
-  gem 'thin'
+  # gem 'thin'
 
   # Quiet Assets
   gem 'quiet_assets'
