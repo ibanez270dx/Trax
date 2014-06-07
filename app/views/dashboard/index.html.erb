@@ -1,20 +1,19 @@
 
 
-<h1>Dashboard</h1>
-
-<div id="dashboard" class="row-fluid">
-  <div class="span4">
-    <%= link_to ' Create Track', '#createTrack', id: 'create-track', class: 'icon-plus-sign btn', data: { toggle: "modal" } %>
-    <h3>My Tracks</h3>
-  </div>
-
-  <div class="span4">
-    <%= link_to ' Create Project', '#createProject', id: 'create-project', class: 'icon-plus-sign btn', data: { toggle: "modal" } %>
-    <h3>My Projects</h3>
-  </div>
-
-  <div class="span4">
-    <%= link_to ' Create Song', '#createSong', id: 'create-song', class: 'icon-plus-sign btn', data: { toggle: "modal" } %>
-    <h3>My Songs</h3>
-  </div>
+<div id="dashboard" class="row">
+  <section id="tracks" class="col-md-4">
+    <span class="jumbo-text">0</span>
+    <i class="fa fa-sliders"></i>
+    <h2>Tracks</h2>
+  </section>
+  <section id="projects" class="col-md-4">
+    <span class="jumbo-text">0</span>
+    <i class="fa fa-file-audio-o"></i>
+    <h2>Projects</h2>
+  </section>
+  <section id="songs" class="col-md-4">
+    <span class="jumbo-text">0</span>
+    <i class="fa fa-music"></i>
+    <h2>Songs</h2>
+  </section>
 </div>
