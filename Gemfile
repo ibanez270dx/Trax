@@ -56,3 +56,6 @@ gem 'bcrypt-ruby'
 
 # File Attachments
 gem 'paperclip'
+
+# Use Amazon S3 Storage
+gem 'aws-sdk', '~> 1.5.7'

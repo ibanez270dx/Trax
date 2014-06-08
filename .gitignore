@@ -13,3 +13,6 @@
 
 # Stupid thing
 /.DS_store
+
+# Don't commit my Amazon settings
+/config/amazon.yml
