@@ -11,20 +11,30 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130530031806) do
+ActiveRecord::Schema.define(version: 20140608023334) do
+
+  create_table "tags", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "tags_tracks", force: true do |t|
+    t.integer "tag_id"
+    t.integer "track_id"
+  end
 
   create_table "tracks", force: true do |t|
     t.integer  "user_id"
     t.string   "title"
     t.text     "description"
-    t.string   "instrument"
-    t.string   "time_signature"
     t.integer  "duration"
-    t.integer  "soundcloud_id"
-    t.string   "soundcloud_uri"
-    t.string   "soundcloud_permalink_url"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "audio_file_name"
+    t.string   "audio_file_size"
+    t.string   "audio_content_type"
+    t.string   "audio_updated_at"
   end
 
   create_table "users", force: true do |t|
