@@ -53,3 +53,6 @@ gem 'therubyracer', platforms: :ruby
 
 # To use ActiveModel has_secure_password
 gem 'bcrypt-ruby'
+
+# File Attachments
+gem 'paperclip'
