@@ -22,7 +22,7 @@ class UsersController < ApplicationController
     if request.get? && current_user
       redirect_to dashboard_path and return
     elsif request.post?
-      if @user = User.find_by_login(params[:user][:login])
+      if @user = User.find_by_email(params[:user][:email])
         if @user.authenticate(params[:user][:password])
           session[:user_id] = @user.id
           redirect_to session[:user_requested_url] || dashboard_path
@@ -45,7 +45,7 @@ class UsersController < ApplicationController
   private
 
     def user_params
-      params.require(:user).permit(:name, :login, :password, :password_confirmation, :soundcloud_id)
+      params.require(:user).permit(:name, :email, :password, :password_confirmation, :soundcloud_id)
     end
 
 end

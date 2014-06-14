@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140608023334) do
+ActiveRecord::Schema.define(version: 20140614011208) do
 
   create_table "tags", force: true do |t|
     t.string   "name"
@@ -39,11 +39,10 @@ ActiveRecord::Schema.define(version: 20140608023334) do
 
   create_table "users", force: true do |t|
     t.string   "name"
-    t.string   "login"
+    t.string   "email"
     t.string   "password_digest"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "soundcloud_id"
   end
 
 end
