@@ -1,6 +1,10 @@
 class TracksController < ApplicationController
   before_filter :require_user
 
+  def new
+    @track = Track.new
+  end
+
   def create
     @track = current_user.tracks.new track_params
     if params[:track][:soundcloud_id].present?
